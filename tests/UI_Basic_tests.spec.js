@@ -24,7 +24,7 @@ test('Open the browser with default browsercontext', async ({page})=>{
  await page.goto("https://www.amazonprime.com");
 });
 
-test.only('PageTitle test', async ({page})=>{
+test('PageTitle test', async ({page})=>{
  await page.goto("https://www.google.com");
  console.log(await page.title());
  await expect(page).toHaveTitle("Google");
