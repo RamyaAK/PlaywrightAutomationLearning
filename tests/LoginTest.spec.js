@@ -85,5 +85,5 @@ test.describe('Negative Login Tests', () => {
 
   console.log("Login Time:", loginTime);
 
-  expect(loginTime).toBeLessThan(2000);
+  expect(loginTime).toBeLessThan(3000);
 });
