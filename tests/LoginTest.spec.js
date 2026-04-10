@@ -69,3 +69,21 @@ test.describe('Negative Login Tests', () => {
         console.log(await page.locator("[style*='block']").textContent('Incorrect'))
     });
     });
+ 
+    // Performance Test for Login functionality, we can measure the time taken for the login process to complete and assert that it is within an acceptable threshold. This helps in ensuring that the login functionality is not only functional but also performs well under expected conditions.
+  test('Login Performance Test', async ({ page }) => {
+  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  const start = Date.now();
+
+  await page.fill("#username", process.env.USERNAME);
+  await page.fill("#password", process.env.PASSWORD);
+  await page.click("#signInBtn");
+
+  await page.waitForURL(/shop/);
+
+  const loginTime = Date.now() - start;
+
+  console.log("Login Time:", loginTime);
+
+  expect(loginTime).toBeLessThan(2000);
+});
