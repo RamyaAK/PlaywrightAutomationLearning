@@ -1,0 +1,22 @@
+// @ts-check
+import { defineConfig, devices } from '@playwright/test';
+
+/**
+ * @see https://playwright.dev/docs/test-configuration
+ */
+const config = ({
+  testDir: './tests',
+  timeout: 40 * 1000,
+  expect:{
+    timeout: 40 * 1000
+  },
+  reporter: 'html',
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  use: {
+    browserName: 'chromium',
+    /* Base URL to use in actions like `await page.goto('')`. */
+    // baseURL: 'http://localhost:3000',
+  },
+});
+module.exports = config
+
